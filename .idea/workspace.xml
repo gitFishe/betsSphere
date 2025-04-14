@@ -4,12 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/my-expo-app/app/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-expo-app/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-expo-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-expo-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-expo-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-expo-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-expo-app/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-expo-app/tailwind.config.js" afterDir="false" />
+    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="nice work diddy">
+      <change afterPath="$PROJECT_DIR$/app/(auth)/_layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(auth)/signup.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/history.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/list.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/profile.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(tabs)/settings.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Auto-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Geologica_Cursive-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/navigate-home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CustomButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/FormField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/LiveChat.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/SearchBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/TabsLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/+not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ExternalLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HapticTab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/HelloWave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ParallaxScrollView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedText.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThemedView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/ThemedText-test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/__tests__/__snapshots__/ThemedText-test.tsx.snap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/IconSymbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/TabBarBackground.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,31 +82,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/my-expo-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2vHLwSteXCr0b5EhWZab9OW3vDi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/HTML/betSphere",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\HTML\\betSphere\\my-expo-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/HTML/CLEAR&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\HTML\\betSphere\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\HTML\betSphere\assets\images" />
+      <recent name="D:\HTML\betSphere\assets\fonts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,10 +134,41 @@
       <option name="presentableId" value="Default" />
       <updated>1743797290875</updated>
       <workItem from="1743797292285" duration="743000" />
+      <workItem from="1743798061048" duration="5494000" />
+      <workItem from="1743861150926" duration="1635000" />
+      <workItem from="1743862908768" duration="5492000" />
+      <workItem from="1743961612173" duration="9156000" />
+      <workItem from="1744035217449" duration="10195000" />
+      <workItem from="1744109343223" duration="1722000" />
+      <workItem from="1744195249552" duration="7557000" />
+      <workItem from="1744227849099" duration="707000" />
+      <workItem from="1744231163611" duration="4465000" />
+      <workItem from="1744282146246" duration="6093000" />
+      <workItem from="1744366247390" duration="5654000" />
+      <workItem from="1744465162435" duration="3490000" />
+      <workItem from="1744545671732" duration="4303000" />
+      <workItem from="1744556159235" duration="12178000" />
+      <workItem from="1744584436442" duration="119000" />
+      <workItem from="1744622551213" duration="2995000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="nice work diddy" />
+    <option name="LAST_COMMIT_MESSAGE" value="nice work diddy" />
   </component>
 </project>
