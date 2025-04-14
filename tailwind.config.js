@@ -62,9 +62,9 @@ module.exports = {
 			addComponents({
 				'.defaultCompStyle': {
 					backgroundColor: "#1c1d22",
-					borderRadius: '30px',
-					borderWidth: '2px',
-					borderColor: '#1c1d22', // Твоя переменная gray-400 например
+					borderRadius: '33px',
+					borderWidth: '3px',
+					borderColor: '#1F2023',
 					boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 				},
 			});

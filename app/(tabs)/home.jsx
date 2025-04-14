@@ -1,18 +1,27 @@
-import { View, Text } from "react-native";
+import {View, Text, TouchableOpacity} from "react-native";
 import LiveChat from "../../components/LiveChat";
 import React from "react";
-
+import TrendingBets from "../../components/TrendingBets";
 
 export default function home() {
+
+	let text = 'Who is the most nigga?'
+
 	return (
 		<View className="flex-1 flex-row pt-12">
-			<View className='rounded-[30px] border-gray border-[2px] !h-full px-[45px] py-[40px] !shrink mr-10 w-full'>
-				<View className='bg-[#1c1d22]'>
+			<TrendingBets
+				styles='!h-full !shrink mr-10 w-full'
+			/>
+			<View className='!w-[442px] shrink-0'>
+
+				<View className='defaultCompStyle !h-[85px] px-[30px] justify-center mb-5'>
+					<Text className='text-[#E7E7E7] text-[30px] leading-9 truncate font-bold'>Trending: {text}</Text>
+				</View>
+
+				<View className='defaultCompStyle mb-5 !h-full !shrink'>
 
 				</View>
-			</View>
-			<View className='!w-[450px] shrink-0'>
-				<View></View>
+
 				<LiveChat/>
 			</View>
 		</View>

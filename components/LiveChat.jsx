@@ -74,6 +74,7 @@ export default function LiveChat () {
 			</View>
 
 			<FlatList
+				showsVerticalScrollIndicator={false}
 				ref={flatListRef}
 				className='px-7'
 				data={data}
