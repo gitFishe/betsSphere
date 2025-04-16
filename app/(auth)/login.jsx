@@ -61,6 +61,7 @@ const login = () => {
                     bg-gradient-to-[215deg] from-[rgba(120,160,200,0.45)] via-[rgba(70,100,130,0.3)] to-[rgba(20,25,30,1)]
                     border-2
                 '>
+
                 {/*<View*/}
                 {/*    style={{*/}
                 {/*        background: 'linear-gradient(45deg, #1d2629, #6c8196)',*/}
@@ -84,33 +85,22 @@ const login = () => {
                     value={form.email}
                     title='Email'/>
                 <FormField
-                    handleChangeText={(e) => setForm({...form, username: e})}
-                    value={form.username}
-                    title='Username'/>
-                <FormField
                     handleChangeText={(e) => setForm({...form, password: e})}
                     value={form.password}
                     title='Password'/>
-                <FormField
-                    handleChangeText={(e) => setForm({...form, birth: e})}
-                    value={form.birth}
-                    title='Date of Birth'/>
-
 
                 <TouchableOpacity
                     onPress={submit}
                     onMouseEnter={handleMouseEnter}
                     className='w-full !h-[60px] border border-[#314147] rounded-[10px] bg-[rgba(36,48,60,0.5)] justify-center items-center relative'>
-
                     <Text className='color-[#a1abb8] text-xl font-bold'>Confirm</Text>
 
                     <View
                         className={`absolute ${isAnimating ? 'login-button-animation' : ''} left-[-150%] w-[150%] 
-                        top-0 h-full bg-gradient-to-r from-transparent to-transparent 
-                        via-white/[0.3] transform transition-none pointer-events-none`}
+                    top-0 h-full bg-gradient-to-r from-transparent to-transparent 
+                    via-white/[0.3] transform transition-none pointer-events-none`}
                         style={{ transform: 'translateX(0%)' }}
                     />
-
                 </TouchableOpacity>
 
 

@@ -8,7 +8,7 @@ export default function home() {
 	let text = 'Who is the most nigga?'
 
 	return (
-		<View className="flex-1 flex-row pt-12">
+		<View className="flex-1 flex-row">
 			<TrendingBets
 				styles='!h-full !shrink mr-10 w-full'
 			/>

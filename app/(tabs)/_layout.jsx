@@ -18,6 +18,7 @@ const TABS = [
 const TabsLayout = () => {
 	const router = useRouter();
 	const pathname = usePathname();
+	
 
 	return (
 		<LinearGradient
@@ -26,7 +27,7 @@ const TabsLayout = () => {
 			end={{ x: 0, y: 1 }}
 			className="h-full items-center"
 		>
-			<View className="flex-1 flex-row w-full !max-w-[2300px]">
+			<View className="flex-1 flex-row !w-[95%] !max-w-[2000px]">
 				<View className='pt-4 pl-4 pb-4'>
 					<View className="!w-378 h-full py-[55px] pl-12 pr-7
 					rounded-l-[50px] border-t-[2px] border-l-[2px]
@@ -58,7 +59,7 @@ const TabsLayout = () => {
 
 				<View className="flex-1 my-4 px-12 pt-10 pb-4 z-10 rounded-r-[30px] border-t-[2px] border-gray-light bg-primary-dark shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)]">
 
-					<View className=''>
+					<View className='mb-3'>
 						<View className='flex-1 flex-row justify-center'>
 							<SearchBar
 								containerColor={['#1F2025', '#1C1D21']}
@@ -72,16 +73,14 @@ const TabsLayout = () => {
 								containerStyles='border-gray mr-[12px]'/>
 
 							<CustomButton
+								onPress={() => {router.push('/signup')}}
 								textStyles='text-[#F4FDFA]'
 								containerColor={['#6466A9', '#4F4C82']}
 								title='Sign Up'
 								containerStyles='border-[#43436B]'/>
 						</View>
 					</View>
-
-
 				<Slot/>
-
 				</View>
 			</View>
 		</LinearGradient>
