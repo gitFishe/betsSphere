@@ -14,7 +14,7 @@ module.exports = {
 			keyframes: {
 				'slide-in': {
 					'0%': {
-						transform: 'translateX(-10%)',
+						transform: 'translateX(0%)',
 					},
 					'100%': {
 						transform: 'translateX(200%)',

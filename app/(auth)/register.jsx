@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
+import {View, Text, TouchableOpacity, Image, TextInput, Button} from 'react-native';
 import { router } from 'expo-router';
 import {LinearGradient} from "expo-linear-gradient";
 import FormField from "../../components/FormField";
+import authServices from "../../lib/authServices";
+import {useGlobalContext} from "../../context/GlobalProvider";
+import { Modal } from 'react-native';
 
 const login = () => {
 
@@ -11,8 +14,9 @@ const login = () => {
         username:'',
         email:'',
         password:'',
-        birth:'',
     })
+
+    const { setUser } = useGlobalContext();
 
 
     const handleMouseEnter = () => {
@@ -28,8 +32,22 @@ const login = () => {
 
 
     const submit = async () => {
-        console.log(form)
-    }
+        console.log(form);
+        try {
+            const res = await authServices.register(form);
+
+            setUser(res);
+            router.replace('/home');
+        } catch (error) {
+            console.log('Ошибка регистрации:', error);
+        }
+    };
+
+
+
+
+
+    const [isModalVisible, setModalVisible] = useState(false);
 
 
 
@@ -91,24 +109,35 @@ const login = () => {
                     handleChangeText={(e) => setForm({...form, password: e})}
                     value={form.password}
                     title='Password'/>
-                <FormField
-                    handleChangeText={(e) => setForm({...form, birth: e})}
-                    value={form.birth}
-                    title='Date of Birth'/>
 
+                <TouchableOpacity className='mb-5 w-fit'
+                                  onPress={toggleModal} >
+                    <Text className='underline color-[#a1abb8] text-xl'>Terms & Conditions</Text>
+                </TouchableOpacity>
+
+                <Modal
+                    transparent={true}
+                    animationType='fade'
+                    visible={isModalVisible} onBackdropPress={toggleModal}>
+                    <View className="flex-1 items-center justify-center bg-black/50">
+                        <View className="bg-white rounded-2xl p-6 w-80 h-60 items-center justify-center">
+                            <Text>Это модалка 320x240px (w-80 h-60) 🎯</Text>
+                            <Button title="Закрыть" onPress={() => setModalVisible(false)} />
+                        </View>
+                    </View>
+                </Modal>
 
                 <TouchableOpacity
                     onPress={submit}
                     onMouseEnter={handleMouseEnter}
-                    className='w-full !h-[60px] border border-[#314147] rounded-[10px] bg-[rgba(36,48,60,0.5)] justify-center items-center relative'>
+                    className='w-full !h-[60px] border border-[#314147] rounded-[10px] bg-[rgba(36,48,60,0.5)] overflow-hidden justify-center items-center relative'>
 
                     <Text className='color-[#a1abb8] text-xl font-bold'>Confirm</Text>
 
                     <View
-                        className={`absolute ${isAnimating ? 'login-button-animation' : ''} left-[-150%] w-[150%] 
+                        className={`absolute ${isAnimating ? 'animate-login-button-animation' : ''} left-[-150%] w-[150%] 
                         top-0 h-full bg-gradient-to-r from-transparent to-transparent 
-                        via-white/[0.3] transform transition-none pointer-events-none`}
-                        style={{ transform: 'translateX(0%)' }}
+                        via-white/[0.3] transform`}
                     />
 
                 </TouchableOpacity>
@@ -117,7 +146,7 @@ const login = () => {
                 <TouchableOpacity
                     className='mt-auto mx-auto'
                     onPress={() => router.push('/login')}>
-                    <Text className="text-[#e9f1f4] underline">Already have an account?</Text>
+                    <Text className="text-[#e9f1f4] text-xl underline">Already have an account?</Text>
                 </TouchableOpacity>
             </LinearGradient>
         </View>

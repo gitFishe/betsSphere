@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+
+import {icons} from "../constants"
 
 export default function FormField ({title, handleChangeText, value, otherStyles}) {
 
@@ -19,13 +21,13 @@ export default function FormField ({title, handleChangeText, value, otherStyles}
 				className={`text-xl color-[#a1abb8] h-full focus:outline-0 px-5 w-full ${otherStyles}`}/>
 			{title === "Password" && (
 				<TouchableOpacity
-					className='justify-end items-center !w-12 !h-16 bg-red-500'
+					className='items-center justify-center !w-[60px]'
 					onPress={() => setShowPassword(!showPassword)}>
-					{/*<Image*/}
-					{/*	source={!showPassword ? icons.eye : icons.eyeHide}*/}
-					{/*	className='!w-6 !h-6'*/}
-					{/*	resizeMode='contain'*/}
-					{/*/>*/}
+					<Image
+						source={!showPassword ? icons.eyeOpened : icons.eyeClosed}
+						className='!w-8 !h-8'
+						resizeMode='contain'
+					/>
 				</TouchableOpacity>
 			)}
 		</View>

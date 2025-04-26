@@ -3,17 +3,18 @@ import {View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
 import { router } from 'expo-router';
 import {LinearGradient} from "expo-linear-gradient";
 import FormField from "../../components/FormField";
+import authServices from "../../lib/authServices";
+import {useGlobalContext} from "../../context/GlobalProvider";
 
 const login = () => {
 
     const [isAnimating, setIsAnimating] = useState(false);
     const [form, setForm] = useState({
-        username:'',
-        email:'',
-        password:'',
-        birth:'',
+        login:'',
+        password:''
     })
 
+    const { setUser } = useGlobalContext();
 
     const handleMouseEnter = () => {
         if (isAnimating) return;
@@ -28,8 +29,16 @@ const login = () => {
 
 
     const submit = async () => {
-        console.log(form)
-    }
+        console.log(form);
+        try {
+            const res = await authServices.login(form);
+
+            setUser(res);
+            router.replace('/home');
+        } catch (error) {
+            console.log('Ошибка регистрации:', error);
+        }
+    };
 
 
 
@@ -75,14 +84,14 @@ const login = () => {
                 {/*    className='absolute inset-0 p-[1px] left-0 top-0 !w-full !h-full rounded-[50px] bg-red-500 gradient-border-mask'/>*/}
 
                 <Text className='mb-[40px] text-[50px] font-bold text-[#e9f1f4]'>
-                    Register
+                    Login
                 </Text>
 
 
 
                 <FormField
-                    handleChangeText={(e) => setForm({...form, email: e})}
-                    value={form.email}
+                    handleChangeText={(e) => setForm({...form, login: e})}
+                    value={form.login}
                     title='Email'/>
                 <FormField
                     handleChangeText={(e) => setForm({...form, password: e})}
@@ -92,21 +101,20 @@ const login = () => {
                 <TouchableOpacity
                     onPress={submit}
                     onMouseEnter={handleMouseEnter}
-                    className='w-full !h-[60px] border border-[#314147] rounded-[10px] bg-[rgba(36,48,60,0.5)] justify-center items-center relative'>
+                    className='w-full !h-[60px] border border-[#314147] rounded-[10px] bg-[rgba(36,48,60,0.5)] overflow-hidden justify-center items-center relative'>
                     <Text className='color-[#a1abb8] text-xl font-bold'>Confirm</Text>
 
                     <View
-                        className={`absolute ${isAnimating ? 'login-button-animation' : ''} left-[-150%] w-[150%] 
-                    top-0 h-full bg-gradient-to-r from-transparent to-transparent 
-                    via-white/[0.3] transform transition-none pointer-events-none`}
-                        style={{ transform: 'translateX(0%)' }}
+                        className={`absolute ${isAnimating ? 'animate-login-button-animation' : ''} left-[-150%] w-[150%] 
+                        top-0 h-full bg-gradient-to-r from-transparent to-transparent 
+                        via-white/[0.3] transform`}
                     />
                 </TouchableOpacity>
 
 
                 <TouchableOpacity
                     className='mt-auto mx-auto'
-                    onPress={() => router.push('/signup')}>
+                    onPress={() => router.push('/register')}>
                     <Text className="text-[#e9f1f4] underline">Don't have an account?</Text>
                 </TouchableOpacity>
             </LinearGradient>

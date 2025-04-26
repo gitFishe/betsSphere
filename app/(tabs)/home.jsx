@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity} from "react-native";
+import {View, Text,  TouchableOpacity} from "react-native";
 import LiveChat from "../../components/LiveChat";
 import React from "react";
 import TrendingBets from "../../components/TrendingBets";
@@ -22,7 +22,7 @@ export default function home() {
 
 				</View>
 
-				<LiveChat/>
+				<LiveChat eventId='1'/>
 			</View>
 		</View>
 	);

@@ -4,20 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="nice work diddy">
+    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="done skeleton animation but no change in size">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/eye-closed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/eye-opened.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/send.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/TestMask.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/links.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/context/GlobalProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/authServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nativewind-env.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(auth)/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(auth)/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/register.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FormField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LiveChat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/LiveChat.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/TrendingBets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TrendingBets.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -48,8 +80,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/HTML/CLEAR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sizeTest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/HTML/betSphere Backend/BetSphere-Backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -58,6 +90,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\HTML\\betSphere\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -98,7 +135,15 @@
       <workItem from="1744556159235" duration="12178000" />
       <workItem from="1744584436442" duration="119000" />
       <workItem from="1744622551213" duration="10935000" />
-      <workItem from="1744808587205" duration="358000" />
+      <workItem from="1744808587205" duration="12800000" />
+      <workItem from="1744843105253" duration="725000" />
+      <workItem from="1744890828936" duration="2445000" />
+      <workItem from="1744981606001" duration="642000" />
+      <workItem from="1745244059395" duration="7257000" />
+      <workItem from="1745312388934" duration="9294000" />
+      <workItem from="1745411088272" duration="4547000" />
+      <workItem from="1745595374314" duration="16970000" />
+      <workItem from="1745694177482" duration="2891000" />
     </task>
     <task id="LOCAL-00001" summary="nice work diddy">
       <option name="closed" value="true" />
@@ -108,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744638737304</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="before testing">
+      <option name="closed" value="true" />
+      <created>1744809236248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744809236248</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +180,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="nice work diddy" />
-    <option name="LAST_COMMIT_MESSAGE" value="nice work diddy" />
+    <MESSAGE value="before testing" />
+    <MESSAGE value="done skeleton animation but no change in size" />
+    <option name="LAST_COMMIT_MESSAGE" value="done skeleton animation but no change in size" />
   </component>
 </project>

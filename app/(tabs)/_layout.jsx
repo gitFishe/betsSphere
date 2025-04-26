@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useRouter, Slot, usePathname } from "expo-router";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "../../components/SearchBar";
 import CustomButton from "../../components/CustomButton";
 import LiveChat from "../../components/LiveChat";
+import {useGlobalContext} from "../../context/GlobalProvider";
 
 const TABS = [
 	{ id: "home", img: "home",label: "🏠 Home" },
@@ -18,7 +19,10 @@ const TABS = [
 const TabsLayout = () => {
 	const router = useRouter();
 	const pathname = usePathname();
-	
+
+	const { isLoggedIn } = useGlobalContext();
+
+
 
 	return (
 		<LinearGradient
@@ -59,25 +63,32 @@ const TabsLayout = () => {
 
 				<View className="flex-1 my-4 px-12 pt-10 pb-4 z-10 rounded-r-[30px] border-t-[2px] border-gray-light bg-primary-dark shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)]">
 
-					<View className='mb-3'>
-						<View className='flex-1 flex-row justify-center'>
+					<View className='mb-5'>
+						<View className='flex-1 flex-row justify-center items-center'>
 							<SearchBar
 								containerColor={['#1F2025', '#1C1D21']}
 								containerStyles='mr-auto'/>
+							{isLoggedIn ? (
+								<View className='bg-gray-400 !w-10 !h-10 '>
 
-							<CustomButton
-								onPress={() => {router.push('/login')}}
-								textStyles='text-gray-200'
-								containerColor={['#1F2025', '#1C1D21']}
-								title='Log In'
-								containerStyles='border-gray mr-[12px]'/>
+								</View>
+							) : (
+								<>
+									<CustomButton
+									onPress={() => {router.push('/login')}}
+									textStyles='text-gray-200'
+									containerColor={['#1F2025', '#1C1D21']}
+									title='Log In'
+									containerStyles='border-gray mr-[12px]'/>
 
-							<CustomButton
-								onPress={() => {router.push('/signup')}}
-								textStyles='text-[#F4FDFA]'
-								containerColor={['#6466A9', '#4F4C82']}
-								title='Sign Up'
-								containerStyles='border-[#43436B]'/>
+									<CustomButton
+										onPress={() => {router.push('/register')}}
+										textStyles='text-[#F4FDFA]'
+										containerColor={['#6466A9', '#4F4C82']}
+										title='Sign Up'
+										containerStyles='border-[#43436B]'/>
+								</>
+							)}
 						</View>
 					</View>
 				<Slot/>

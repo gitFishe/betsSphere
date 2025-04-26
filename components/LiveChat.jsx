@@ -1,67 +1,103 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, TextInput, Image, FlatList, TouchableOpacity} from 'react-native';
+import {icons} from "../constants";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {connectWebSocketWithAuth} from "../lib/authServices";
 
-const Message = ({content:{avatar,name,text}}) => {
+const Message = ({content:{avatar,username,message}}) => {
 	return (
 		<View className="mb-4 bg-[#1f2229] pt-[15px] pb-[21px] px-[25px] rounded-[22px] shadow-custom-shadow flex-col">
 			<View className='flex-row mb-2'>
 				<Image
-					source={{uri: avatar}}
+					source='https://randomuser.me/api/portraits/men/1.jpg'
 					className="!h-[30] w-[30] rounded-[10px] mr-3"
 				/>
-				<Text className="text-text text-2xl font-semibold">{name}</Text>
+				<Text className="text-text text-2xl font-semibold">{username}</Text>
 			</View>
 			<View className="flex-1">
-				<Text className="text-text text-[22px] leading-7 font-bold">{text}</Text>
+				<Text className="text-text text-[22px] leading-7 font-bold">{message}</Text>
 			</View>
 		</View>
 	);
 };
 
 
-export default function LiveChat () {
+export default function LiveChat ({eventId}) {
 
-	const [data, setData] = useState([
-		{
-			$id: '1',
-			text: 'Hi, nigga my nigga my nigga black black black',
-			name: 'Homie',
-			avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
-		},
-		{
-			$id: '2',
-			text: 'Chicken Jackey',
-			name: 'Homie',
-			avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
-		},
-	]);
+	const ws = useRef(null);
 
 	const [message, setMessage] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [focused, setFocused] = useState(false)
+
+	const flatListRef = useRef(null);
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		const connect = async () => {
+			try {
+				const socket = await connectWebSocketWithAuth('ws://46.63.69.24/v1/1/chat');
+
+				ws.current = socket;
+
+				socket.onopen = () => console.log('WebSocket connected');
+				socket.onmessage = (event) => {
+					try {
+						const msg = JSON.parse(event.data);
+						console.log('msg', msg)
+						setData((prev) => [...prev, msg]);
+					} catch (e) {
+						console.error('Ошибка парсинга сообщения:', e);
+					}
+				};
+				socket.onerror = (e) => console.error('WebSocket error:', e.message);
+				socket.onclose = () => console.log('WebSocket disconnected');
+			} catch (err) {
+				console.error('Socket connect error:', err.message);
+			}
+		};
+
+		connect();
+
+		return () => {
+			ws.current?.close();
+		};
+	}, []);
+
+
+
+	const [data, setData] = useState([
+		{
+			$id: '1',
+			message: 'Hi, nigga my nigga my nigga black black black',
+			username: 'Homie',
+			avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+		},
+		{
+			$id: '2',
+			message: 'Chicken Jackey',
+			username: 'Homie',
+			avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+		},
+	]);
+
 
 	const showButton = message.trim().length > 0;
 
 	const sendMessage = async () => {
 		if (!message.trim()) return;
 
-		setLoading(true);
-
 		const newMessage = {
-			$id: Date.now().toString(),
-			text: message,
-			name: 'You',
-			avatar: 'https://randomuser.me/api/portraits/lego/1.jpg',
+			action:0,
+			message:message
 		};
 
-		setData((prev) => [...prev, newMessage]);
+		ws.current?.send(JSON.stringify(newMessage));
+
 		setMessage('');
-		setLoading(false);
 		inputRef.current?.focus();
 	};
 
-	const flatListRef = useRef(null);
-	const inputRef = useRef(null);
 
 	useEffect(() => {
 		flatListRef.current?.scrollToEnd({ animated: true });
@@ -78,7 +114,7 @@ export default function LiveChat () {
 				ref={flatListRef}
 				className='px-7'
 				data={data}
-				keyExtractor={(item) => item.$id}
+				keyExtractor={(item) => item.id}
 				renderItem={({item}) => (
 					<Message content={item}/>
 				)}
@@ -108,10 +144,13 @@ export default function LiveChat () {
 					/>
 
 					<TouchableOpacity
-						className={`!w-[30px] justify-center items-ce absolute right-5 -translate-y-1/2 top-1/2 !h-[30px] ${showButton ? 'block' : 'hidden'}`}
+						className={`!w-10 !h-full flex justify-center items-center absolute right-5 -translate-y-1/2 top-1/2  ${showButton ? 'block' : 'hidden'}`}
 						onPress={sendMessage}
 						disabled={loading}>
-						<Text className='text-text text-3xl text-center'>➤</Text>
+						<Image
+							className='!w-8 !h-8'
+							resizeMode='contain'
+							source={icons.send}/>
 					</TouchableOpacity>
 				</View>
 
