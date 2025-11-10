@@ -3,15 +3,15 @@ import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 
 import {icons} from "../constants"
 
-export default function FormField ({title, handleChangeText, value, otherStyles}) {
+export default function FormField ({title, handleChangeText, value, otherStyles, error}) {
 
 	const [showPassword, setShowPassword] = useState(false)
 
 
     return (
 		<View
-			className='mb-4 !h-[60px] backdrop-blur-[20px]
-                    bg-[rgba(163,163,163,0.06)] border border-[#314147] rounded-[10px] flex-row'>
+			className={`mb-4 !h-[60px] backdrop-blur-[20px]
+                    bg-[rgba(163,163,163,0.06)] border rounded-[10px] flex-row ${error ? 'border-red-500' : 'border-[#314147]'}`}>
 			<TextInput
 				secureTextEntry={title === 'Password' && !showPassword}
 				onChangeText={handleChangeText}
@@ -24,7 +24,7 @@ export default function FormField ({title, handleChangeText, value, otherStyles}
 					className='items-center justify-center !w-[60px]'
 					onPress={() => setShowPassword(!showPassword)}>
 					<Image
-						source={!showPassword ? icons.eyeOpened : icons.eyeClosed}
+						source={!showPassword ? icons.eyeClosed : icons.eyeOpened}
 						className='!w-8 !h-8'
 						resizeMode='contain'
 					/>

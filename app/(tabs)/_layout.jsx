@@ -31,7 +31,8 @@ const TabsLayout = () => {
 			end={{ x: 0, y: 1 }}
 			className="h-full items-center"
 		>
-			<View className="flex-1 flex-row !w-[95%] !max-w-[2000px]">
+			{/*!max-w-[2000px]*/}
+			<View className="flex-1 flex-row !w-[95%]">
 				<View className='pt-4 pl-4 pb-4'>
 					<View className="!w-378 h-full py-[55px] pl-12 pr-7
 					rounded-l-[50px] border-t-[2px] border-l-[2px]
@@ -66,8 +67,16 @@ const TabsLayout = () => {
 					<View className='mb-5'>
 						<View className='flex-1 flex-row justify-center items-center'>
 							<SearchBar
+								onPress={() => {alert(innerWidth)}}
 								containerColor={['#1F2025', '#1C1D21']}
 								containerStyles='mr-auto'/>
+
+							<CustomButton
+								onPress={() => {alert(innerWidth); alert(innerHeight)}}
+								textStyles='text-gray-200'
+								containerColor={['#1F2025', '#1C1D21']}
+								title='Log In'
+								containerStyles='border-gray mr-[12px]'/>
 							{isLoggedIn ? (
 								<View className='bg-gray-400 !w-10 !h-10 '>
 

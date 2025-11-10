@@ -10,8 +10,6 @@ module.exports = {
 		extend: {
 			animation: {
 				'login-button-animation': 'slide-in 1s ease-in-out forwards',
-				'register-scroll-animation' : 'scroller 500ms ease-in-out forwards',
-				'register-scroll-animation-reverse' : 'scrollerReversed 500ms ease-in-out forwards'
 			},
 			keyframes: {
 				'slide-in': {
@@ -20,22 +18,6 @@ module.exports = {
 					},
 					'100%': {
 						transform: 'translateX(200%)',
-					},
-				},
-				'scroller': {
-					'0%': {
-						transform: 'translateY(0%)',
-					},
-					'100%': {
-						transform: 'translateY(-105%)',
-					},
-				},
-				'scrollerReversed': {
-					'0%': {
-						transform: 'translateY(105%)',
-					},
-					'100%': {
-						transform: 'translateY(0%)',
 					},
 				},
 			},

@@ -10,7 +10,7 @@ const Bet = ({ title, isLoaded }) => {
         <TouchableOpacity className='bg-[#1F2229] shadow-custom-shadow !h-[210px] w-full mb-[30px] rounded-[33px] border border-[#1E1F23] py-[34px] px-[38px]'>
             {
                 !isLoaded ? (
-                    <View>
+                    <>
                         {/*<View className="!w-[300px] !h-[40px] rounded-[18px] bg-[#22262D] mb-[26px] relative overflow-hidden">*/}
                         {/*    <View*/}
                         {/*        className={`absolute animate-login-button-animation left-[-150%] w-[150%]*/}
@@ -37,19 +37,26 @@ const Bet = ({ title, isLoaded }) => {
                             { styles: 'mb-[17px] !h-[23px] !w-full rounded-xl'},
                             { styles: '!w-[600px] !h-[23px] rounded-xl'},
                         ]} />
-                    </View>
-
+                    </>
                 ) : (
-                    <View>
+                    <>
                         <Text className="font-bold text-4xl text-[#E7E7E7] mb-[26px]">{title}</Text>
-                        <View className='!w-full !h-[23px] bg-[#22262D] rounded-xl mb-[17px]'/>
-                        <View className='!w-[600px] !h-[23px] bg-[#22262D] rounded-xl'/>
-                    </View>
+                        <Text className='text-white text-2xl'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </Text>
+                    </>
                 )
             }
         </TouchableOpacity>
     );
 };
+
+
+// <View>
+//     <Text className="font-bold text-4xl text-[#E7E7E7] mb-[26px]">{title}</Text>
+//     <View className='!w-full !h-[23px] bg-[#22262D] rounded-xl mb-[17px]'/>
+//     <View className='!w-[600px] !h-[23px] bg-[#22262D] rounded-xl'/>
+// </View>
+
 
 
 export default function TrendingBets({ styles }) {
@@ -59,6 +66,7 @@ export default function TrendingBets({ styles }) {
         { id: '3', title: 'Elon vs Zuckerberg' },
         { id: '4', title: 'Elon vs Zuckerberg' },
         { id: '5', title: 'Nigga vs Nigga' },
+        { id: '6', title: 'Nigga vs Trump' },
     ];
 
     const [isLoaded, setIsLoaded] = useState(false);

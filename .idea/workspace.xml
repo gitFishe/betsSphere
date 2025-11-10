@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="a lot of thing happend">
+    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="Add error handling to FormField and update registration form validation">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/arrow-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/horse-vid.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(auth)/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/partial-react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/react-logo@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/splash-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FormField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TrendingBets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TrendingBets.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -67,6 +74,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Docker.acumatica docker nasral/docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker nasral/docker.compose.yml.auth-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker nasral/docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;sizeTest&quot;,
@@ -82,15 +92,62 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+      &quot;postgresql&quot;,
+      &quot;mysql&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\HTML\betSphere\constants" />
+      <recent name="D:\HTML\betSphere\components" />
       <recent name="D:\HTML\betSphere\assets\images" />
       <recent name="D:\HTML\betSphere\assets\fonts" />
     </key>
+  </component>
+  <component name="RunManager" selected="Docker.acumatica docker nasral/docker.compose.yml: Compose Deployment">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="acumatica docker nasral/docker.compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="../../acumatica docker nasral/docker.compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker nasral/docker.compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="../../docker nasral/docker.compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker nasral/docker.compose.yml.auth-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="auth-db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="../../docker nasral/docker.compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.acumatica docker nasral/docker.compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker nasral/docker.compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker nasral/docker.compose.yml.auth-db: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,6 +190,51 @@
       <workItem from="1745411088272" duration="4547000" />
       <workItem from="1745595374314" duration="16970000" />
       <workItem from="1745694177482" duration="9503000" />
+      <workItem from="1745778952669" duration="20000" />
+      <workItem from="1745844593979" duration="12994000" />
+      <workItem from="1745929600561" duration="1618000" />
+      <workItem from="1746017687090" duration="3121000" />
+      <workItem from="1746099184656" duration="4137000" />
+      <workItem from="1746210325901" duration="2300000" />
+      <workItem from="1746361236145" duration="28000" />
+      <workItem from="1746546477534" duration="632000" />
+      <workItem from="1746644148160" duration="70000" />
+      <workItem from="1746884220707" duration="365000" />
+      <workItem from="1747067980441" duration="705000" />
+      <workItem from="1747123364204" duration="66000" />
+      <workItem from="1747220807483" duration="32000" />
+      <workItem from="1747247946151" duration="27000" />
+      <workItem from="1747271545321" duration="8000" />
+      <workItem from="1748180418631" duration="316000" />
+      <workItem from="1748186938325" duration="96000" />
+      <workItem from="1749569036065" duration="775000" />
+      <workItem from="1749570195699" duration="1315000" />
+      <workItem from="1750005836146" duration="10000" />
+      <workItem from="1750197003206" duration="271000" />
+      <workItem from="1750242224762" duration="208000" />
+      <workItem from="1753704245092" duration="2552000" />
+      <workItem from="1754242525397" duration="215000" />
+      <workItem from="1754242752206" duration="4000" />
+      <workItem from="1754253203016" duration="1002000" />
+      <workItem from="1754254261982" duration="8000" />
+      <workItem from="1754254310764" duration="232000" />
+      <workItem from="1754342809860" duration="1270000" />
+      <workItem from="1754420529793" duration="2305000" />
+      <workItem from="1754693554834" duration="1418000" />
+      <workItem from="1755386368958" duration="474000" />
+      <workItem from="1756402585758" duration="2886000" />
+      <workItem from="1756556597462" duration="1419000" />
+      <workItem from="1756665250530" duration="675000" />
+      <workItem from="1756809573157" duration="25000" />
+      <workItem from="1762259118293" duration="1746000" />
+      <workItem from="1762436674125" duration="259000" />
+      <workItem from="1762436995511" duration="50000" />
+      <workItem from="1762437118479" duration="62000" />
+      <workItem from="1762609808122" duration="574000" />
+      <workItem from="1762706276886" duration="1444000" />
+      <workItem from="1762719478364" duration="1777000" />
+      <workItem from="1762724570625" duration="711000" />
+      <workItem from="1762775766683" duration="2137000" />
     </task>
     <task id="LOCAL-00001" summary="nice work diddy">
       <option name="closed" value="true" />
@@ -158,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745701198304</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pull">
+      <option name="closed" value="true" />
+      <created>1745778970506</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745778970506</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +290,8 @@
     <MESSAGE value="before testing" />
     <MESSAGE value="done skeleton animation but no change in size" />
     <MESSAGE value="a lot of thing happend" />
-    <option name="LAST_COMMIT_MESSAGE" value="a lot of thing happend" />
+    <MESSAGE value="pull" />
+    <MESSAGE value="Add error handling to FormField and update registration form validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add error handling to FormField and update registration form validation" />
   </component>
 </project>
