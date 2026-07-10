@@ -4,34 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="Add error handling to FormField and update registration form validation">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041/storage_v2/_src_/database/psql.Xqc0AA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/arrow-up.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/horse-vid.mp4" afterDir="false" />
+    <list default="true" id="6c090880-20fa-4039-90bb-e60625867742" name="Changes" comment="Add error handling to FormField and update registration form validation. And checkpoint after big pause">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57ab4686-2f3a-40f6-bf54-db8a29111041.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/register.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FormField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TrendingBets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TrendingBets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/HTML/betSphere" value="2vHLwSteXCr0b5EhWZab9OW3vDi" />
+    </persistenceIdMap>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="99" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,6 +50,10 @@
     &quot;accountId&quot;: &quot;9cf2fc18-d28f-47aa-9a76-889228216187&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -72,31 +66,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.acumatica docker nasral/docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker nasral/docker.compose.yml.auth-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker nasral/docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sizeTest&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/HTML/betSphere Backend/BetSphere-Backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\HTML\\betSphere\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.acumatica docker nasral/docker.compose.yml: Compose Deployment.executor": "Run",
+    "Docker.docker nasral/docker.compose.yml.auth-db: Compose Deployment.executor": "Run",
+    "Docker.docker nasral/docker.compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "native",
+    "last_opened_file_path": "D:/HTML/betSphere",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editing.templates",
+    "ts.external.directory.path": "D:\\HTML\\betSphere\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\HTML\betSphere\constants" />
@@ -152,7 +149,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
       </set>
     </attachedChunks>
   </component>
@@ -234,7 +231,30 @@
       <workItem from="1762706276886" duration="1444000" />
       <workItem from="1762719478364" duration="1777000" />
       <workItem from="1762724570625" duration="711000" />
-      <workItem from="1762775766683" duration="2137000" />
+      <workItem from="1762775766683" duration="2669000" />
+      <workItem from="1762860214120" duration="3872000" />
+      <workItem from="1762891785223" duration="2116000" />
+      <workItem from="1762949083190" duration="4523000" />
+      <workItem from="1763051680800" duration="167000" />
+      <workItem from="1763053695947" duration="14000" />
+      <workItem from="1763053735938" duration="2424000" />
+      <workItem from="1763109818306" duration="9755000" />
+      <workItem from="1763418699848" duration="144000" />
+      <workItem from="1764193261896" duration="2404000" />
+      <workItem from="1764251822000" duration="588000" />
+      <workItem from="1764329996607" duration="651000" />
+      <workItem from="1764876819839" duration="3888000" />
+      <workItem from="1765011085601" duration="29000" />
+      <workItem from="1765027928634" duration="8000" />
+      <workItem from="1765060817050" duration="806000" />
+      <workItem from="1765489294376" duration="37000" />
+      <workItem from="1765532674916" duration="23000" />
+      <workItem from="1765612976416" duration="174000" />
+      <workItem from="1765726951989" duration="600000" />
+      <workItem from="1765808038122" duration="37000" />
+      <workItem from="1777825288836" duration="141000" />
+      <workItem from="1781559739256" duration="749000" />
+      <workItem from="1783709048270" duration="687000" />
     </task>
     <task id="LOCAL-00001" summary="nice work diddy">
       <option name="closed" value="true" />
@@ -268,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745778970506</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add error handling to FormField and update registration form validation. And checkpoint after big pause">
+      <option name="closed" value="true" />
+      <created>1762779597341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762779597341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +320,16 @@
     <MESSAGE value="a lot of thing happend" />
     <MESSAGE value="pull" />
     <MESSAGE value="Add error handling to FormField and update registration form validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add error handling to FormField and update registration form validation" />
+    <MESSAGE value="checkpoint after big pause" />
+    <MESSAGE value="Add error handling to FormField and update registration form validation. And checkpoint after big pause" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add error handling to FormField and update registration form validation. And checkpoint after big pause" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

@@ -23,7 +23,6 @@ const TabsLayout = () => {
 	const { isLoggedIn } = useGlobalContext();
 
 
-
 	return (
 		<LinearGradient
 			colors={['#24242C', '#1D1E23']}
