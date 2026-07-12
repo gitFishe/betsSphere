@@ -56,8 +56,26 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-component:#1c1d22;
+  --color-element:#1f2229;
+
+  --color-text:#E7E7E7;
+  --color-text-dark:#9898A0;
+
+  --color-primary: #1b1c20;
+  --color-primary-dark:#15161a;
+
+  --color-border-default:#1e1f23;
+  --color-light-border:#414149;
+
+  --shadow-component: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@utility bg-component-gradient {
+  background-image: linear-gradient(180deg, #1C1D22 0%, #18191E 100%);
 }
 
 @media (prefers-color-scheme: dark) {
