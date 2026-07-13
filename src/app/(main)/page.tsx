@@ -6,7 +6,7 @@ export default function MainPage() {
     return (
         <div className='w-full h-full flex gap-8'>
             <BetsList/>
-            <div className='w-full flex flex-col gap-6'>
+            <div className='flex flex-col gap-6 w-100 shrink-0'>
                 <Trending/>
                 <LiveChat/>
             </div>
