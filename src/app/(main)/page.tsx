@@ -7,10 +7,8 @@ export default function MainPage() {
         <div className='w-full h-full flex gap-8'>
             <BetsList/>
             <div className='w-full flex flex-col gap-6'>
-
                 <Trending/>
                 <LiveChat/>
-
             </div>
         </div>
     )

@@ -78,6 +78,22 @@
   background-image: linear-gradient(180deg, #1C1D22 0%, #18191E 100%);
 }
 
+@utility bg-button-black {
+  background-image: linear-gradient(180deg, #1F2025 0%, #1C1D21 100%);
+}
+
+@utility bg-button-purple {
+  background-image: linear-gradient(180deg, #6466A9 0%, #4F4C82 100%);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
