@@ -1,6 +1,6 @@
-import Sidebar from "@/app/(main)/sidebar";
+import Sidebar from "@/app/(main)/_components/Sidebar";
 import SearchBar from "@/app/(main)/_components/SearchBar";
-import CustomButton from "@/components/CustomButton";
+import CustomLink from "@/components/CustomLink";
 
 export default function MainLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
     return (
@@ -13,8 +13,8 @@ export default function MainLayout({children,}: Readonly<{ children: React.React
                         <div className='flex justify-between pb-8'>
                             <SearchBar/>
                             <div className='flex items-center gap-3'>
-                                <CustomButton text='Log in'/>
-                                <CustomButton text='Sign Up'/>
+                                <CustomLink href='/login' text='Log in'/>
+                                <CustomLink purple={true} href='/register' text='Sign Up'/>
                             </div>
                         </div>
 
