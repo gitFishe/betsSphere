@@ -8,7 +8,7 @@ export default function BetsList() {
             <div className='text-3xl font-semibold mb-5'>
                 <h1>Place Your Bets</h1>
             </div>
-            <div className='flex flex-wrap content-start flex-1 min-h-0 overflow-y-auto no-scrollbar gap-6'>
+            <div className='flex flex-wrap content-start flex-1 min-h-0 overflow-y-auto no-scrollbar gap-6 px-0.75'>
                 {TEST_ARRAY.slice(0,20).map((item,i) => (
                     <BetsListItem key={i} title={item}/>
                 ))}
