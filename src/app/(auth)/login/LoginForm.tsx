@@ -24,14 +24,12 @@ export default function LoginForm() {
         console.log('submit',data)
     }
 
-
-
     return(
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
             <CustomInput placeholder='Email'
                          {...register('email', {
                              required:'Enter Email',
-                             pattern:{value:/^\S+@\S+\.\S+$/,message:'Invalid Email'},
+                             pattern:{value:/^[^@]+@[^@.](?:[^@]*[^@.])?$/,message:'Invalid Email'},
                          })}
             />
             {errors.email && <span>{errors.email.message}</span>}

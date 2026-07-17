@@ -43,3 +43,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+devices.json
+expo-env.d.ts
+mcp.json
+README.md
+router.d.ts
