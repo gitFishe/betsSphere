@@ -4,10 +4,11 @@ import {useForm} from "react-hook-form";
 import CustomInput from "@/components/CustomInput";
 import FormButton from "@/components/FormButton";
 import {useEffect} from "react";
-import {getRegisterSession, saveToSession} from "@/app/(auth)/register/draft";
+import {clearRegisterSession, getRegisterSession, saveToSession} from "@/app/(auth)/register/draft";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/store/store";
 import {setCredentials} from "@/store/authSlice";
+import {useRouter} from "next/navigation";
 
 
 interface RegisterFormProps {
@@ -20,9 +21,10 @@ export default function RegisterForm() {
 
     const auth = useSelector((state:RootState) => state.auth)
     const dispatch = useDispatch()
+    const router = useRouter()
 
     useEffect(() => {
-        console.log('auth',auth)
+        console.log('RegisterForm auth',auth)
     }, [auth]);
 
     const {
@@ -46,6 +48,7 @@ export default function RegisterForm() {
         try {
             const response = await fetch('http://localhost:8080/api/auth/register', {
                 method: 'POST',
+                credentials: 'include',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(data)
             })
@@ -54,18 +57,17 @@ export default function RegisterForm() {
                 throw new Error('Register failed')
             }
 
-            const result = await response.json()
+            const {user,access_token} = await response.json()
 
-            console.log(result)
-
-            const {username,email} = result.user
             dispatch(setCredentials({
-                user:{username,email},
-                accessToken:result.access_token
+                user,
+                accessToken:access_token
             }))
 
 
+            clearRegisterSession()
 
+            router.replace('/')
         } catch(e) {
             console.error(e)
         }

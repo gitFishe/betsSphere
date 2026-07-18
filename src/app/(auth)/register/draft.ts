@@ -10,6 +10,9 @@ export const SESSION_KEY = 'register-draft'
 export const saveToSession = (values:RegisterInfo) => {
     sessionStorage.setItem(SESSION_KEY,JSON.stringify(values))
 }
+export const clearRegisterSession = () => {
+    sessionStorage.removeItem(SESSION_KEY)
+}
 
 export const getRegisterSession = () => {
 
