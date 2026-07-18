@@ -7,7 +7,7 @@ import {useEffect} from "react";
 import {getRegisterSession, saveToSession} from "@/app/(auth)/register/draft";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/store/store";
-import {setUser} from "@/store/authSlice";
+import {setCredentials} from "@/store/authSlice";
 
 
 interface RegisterFormProps {
@@ -18,7 +18,7 @@ interface RegisterFormProps {
 }
 export default function RegisterForm() {
 
-    const auth = useSelector((state:RootState) => state.auth.user)
+    const auth = useSelector((state:RootState) => state.auth)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -56,9 +56,16 @@ export default function RegisterForm() {
 
             const result = await response.json()
 
-            const {username,email} = result.user
+            console.log(result)
 
-            dispatch(setUser({username,email}))
+            const {username,email} = result.user
+            dispatch(setCredentials({
+                user:{username,email},
+                accessToken:result.access_token
+            }))
+
+
+
         } catch(e) {
             console.error(e)
         }

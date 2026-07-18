@@ -5,22 +5,25 @@ interface AuthState {
         username:string
         email:string,
     } | null
+    accessToken:string | null,
 }
 
-const initialState:AuthState = {user:{username:'hi',email:'world'}}
+const initialState:AuthState = {user:null,accessToken:null}
 
 const AuthSlice = createSlice({
     name:'auth',
     initialState,
     reducers: {
-        setUser: (state,action:PayloadAction<AuthState['user']>) => {
-            state.user = action.payload
+        setCredentials: (state,action:PayloadAction<{ user:AuthState['user'], accessToken:string }>) => {
+            state.user = action.payload.user
+            state.accessToken = action.payload.accessToken
         },
         logout: (state) => {
-          state.user = null
+            state.user = null
+            state.accessToken = null
         }
     }
 })
 
-export const {setUser,logout} = AuthSlice.actions
+export const {setCredentials,logout} = AuthSlice.actions
 export default AuthSlice.reducer
