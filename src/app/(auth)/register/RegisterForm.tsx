@@ -7,7 +7,7 @@ import {useEffect} from "react";
 import {clearRegisterSession, getRegisterSession, saveToSession} from "@/app/(auth)/register/draft";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/store/store";
-import {setCredentials} from "@/store/authSlice";
+import {authFailed, setCredentials} from "@/store/authSlice";
 import {useRouter} from "next/navigation";
 
 
@@ -54,6 +54,7 @@ export default function RegisterForm() {
             })
 
             if(!response.ok) {
+                dispatch(authFailed())
                 throw new Error('Register failed')
             }
 
@@ -69,6 +70,7 @@ export default function RegisterForm() {
 
             router.replace('/')
         } catch(e) {
+            dispatch(authFailed())
             console.error(e)
         }
     }

@@ -8,11 +8,6 @@
     box-sizing: border-box;
   }
 
-  ul,
-  ol {
-    list-style: none;
-  }
-
   a {
     text-decoration: none;
     color: inherit;
@@ -133,6 +128,16 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+li::marker {
+  content: none;
 }
 
 body {

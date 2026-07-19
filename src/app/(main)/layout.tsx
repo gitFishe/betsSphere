@@ -5,6 +5,7 @@ import SearchBar from "@/app/(main)/_components/SearchBar";
 import CustomLink from "@/components/CustomLink";
 import {useSelector} from "react-redux";
 import {RootState} from "@/store/store";
+import NavProfileBlock from "@/components/NavProfileBlock";
 
 export default function MainLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
 
@@ -20,12 +21,19 @@ export default function MainLayout({children,}: Readonly<{ children: React.React
                     <div className='w-full flex flex-col pl-6 pt-8 pb-6 pr-10.5 bg-primary-dark'>
 
                         <div className='flex justify-between pb-8'>
-                            <SearchBar/>
-                            {auth ? <div className='w-10 h-10 bg-input-bg'></div> : <div className='flex items-center gap-3'>
-                                <CustomLink href='/login' text='Log in'/>
-                                <CustomLink purple={true} href='/register' text='Sign Up'/>
+
+
+                            <div className='ml-auto'>
+                                {auth.status === 'loading'
+                                    ? <span className='h-12 block'>loading</span>
+                                    : auth.user
+                                        ? <NavProfileBlock username='username'/>
+                                        : <div className='flex items-center gap-3'>
+                                            <CustomLink href='/login' text='Log in'/>
+                                            <CustomLink purple={true} href='/register' text='Sign Up'/>
+                                        </div>
+                                }
                             </div>
-                            }
 
                         </div>
 
