@@ -11,8 +11,6 @@ export default function MainLayout({children,}: Readonly<{ children: React.React
 
     const auth = useSelector((state:RootState) => state.auth)
 
-    console.log('MainLayout auth',auth)
-
     return (
         <div className='h-screen bg-component-gradient py-6'>
             <div className='container h-full'>
