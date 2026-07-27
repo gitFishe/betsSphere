@@ -4,9 +4,6 @@ export interface User {
     email: string
     avatar_url: string | null
     balance: number
+    created_at:string
 }
 
-export interface RefreshResponse {
-    user: User
-    access_token: string
-}

@@ -2,6 +2,9 @@
 
 import {ColumnDef, flexRender, getCoreRowModel, useReactTable} from "@tanstack/react-table";
 import {useGetMeQuery} from "@/api/usersApi";
+import BalanceComponent from "@/components/BalanceComponent";
+import ProfileInfoBlock from "@/components/ProfileInfoBlock";
+import {formatMonthYear} from "@/utils/date";
 
 const test = {
     "category": "string",
@@ -101,12 +104,12 @@ const columns:ColumnDef<TableProps>[] = [
             const m = getValue<TableProps['market']>()
             return (
                 <div className='flex items-center gap-3'>
-                    <div className='w-12.5 h-12.5 bg-white rounded-md'>
-                        <img src={m.img} className='w-8 h-8 rounded-full' />
+                    <div className='w-12.5 h-12.5 bg-text rounded-md'>
+                        {/*<img src={m.img} className='w-8 h-8 rounded-full' />*/}
                     </div>
                     <div>
                         <div>{m.title}</div>
-                        <div className='text-text-dark'>{m.eventName}</div>
+                        <div className='text-text-dark text-sm'>{m.eventName}</div>
                     </div>
                 </div>
             )
@@ -129,33 +132,44 @@ export default function List() {
     })
 
     return (
-        <div className='pt-10 flex flex-col h-full min-h-0'>
-            <div className='flex items-center gap-6'>
-                <div className='w-25 h-25 bg-white rounded-full'>
-                </div>
-
-                {!isLoading ? <div className='flex flex-col'>
-                    <h2>{user?.username}</h2>
-                    <span>{user?.id}</span>
-                    <span>{user?.email}</span>
+        <div className='flex flex-col h-full min-h-0'>
+            <div className='flex items-center'>
+                <div className='w-25 h-25 mr-6 bg-white rounded-full'>
                     <span>{user?.avatar_url}</span>
-                    <span>{user?.balance}</span>
-                    <div className='flex items-center gap-2 mt-2'>
-                        <div className='w-4 h-4 bg-green-400'>
-
-                        </div>
-                        <span>Online</span>
-                    </div>
-                </div> : <span>
-                    loading
-                </span>}
-
-            </div>
-            <div className='mt-auto rounded-4xl shadow-component bg-component border-2 border-border-default w-full h-100 overflow-y-auto flex flex-col'>
-                <div className='px-4 pt-2.5 border-b-2 border-border-default flex items-center gap-9 text-2xl font-semibold text-text-dark shrink-0'>
-                    <button className='hover:text-text pb-6.5'>Positions</button>
-                    <button className='hover:text-text pb-6.5'>History</button>
                 </div>
+
+                {!isLoading ?
+                    <div className='flex flex-col gap-1 mr-auto'>
+                        <h2 className='text-3xl text-text font-bold'>{user?.username}</h2>
+                        <div className='flex items-center gap-2 text-text-dark'>
+                            <div className='w-3 h-3 bg-green-600 rounded-full'></div>
+                            <span>Online</span>
+                        </div>
+                        <div className='flex gap-3 text-text-dark'>
+                            <div className='max-w-30 truncate'>
+                                <span>ID #{user?.id}</span>
+                            </div>
+                            <span>Joined {formatMonthYear(user?.created_at ?? 0)}</span>
+                        </div>
+                    </div>
+                    : <span className='mr-auto'>loading</span>
+                }
+
+
+                <BalanceComponent balance={user?.balance}/>
+            </div>
+            <div className='flex gap-6 justify-center mt-6'>
+                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
+            </div>
+            <div className='h-full mt-7 rounded-4xl shadow-component bg-component border-2 border-border-default w-full overflow-y-auto flex flex-col'>
+                <div className='px-6 pt-4 pb-5 border-b-3 border-border-default flex items-center gap-9 text-2xl font-semibold text-text-dark shrink-0'>
+                    <button className='hover:text-text'>Positions</button>
+                    <button className='hover:text-text'>History</button>
+                </div>
+
                 <div className='flex-1 min-h-0 overflow-y-auto no-scrollbar'>
                     <table className='w-full pt-4 min-h-0 table-fixed'>
                         <thead className='sticky top-0 z-10 bg-component'>
@@ -172,9 +186,9 @@ export default function List() {
                         </thead>
                         <tbody>
                             {table.getRowModel().rows.map(row => (
-                                <tr key={row.id} className='h-18 py-2.5 even:bg-primary-dark'>
+                                <tr key={row.id} className='odd:bg-primary-dark'>
                                     {row.getVisibleCells().map(cell => (
-                                       <td className={`px-6 font-semibold text-xl ${cell.column.columnDef.meta?.className ?? ''}`} key={cell.id}>
+                                       <td className={`px-6 py-3 font-semibold text-xl ${cell.column.columnDef.meta?.className ?? ''}`} key={cell.id}>
                                            <span>{flexRender(cell.column.columnDef.cell,cell.getContext())}</span>
                                        </td>
                                     ))}

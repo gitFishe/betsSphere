@@ -2,7 +2,7 @@ import {BaseQueryFn, FetchArgs, FetchBaseQueryError} from "@reduxjs/toolkit/quer
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {RootState} from "@/store/store";
 import {authFailed, setCredentials} from "@/store/authSlice";
-import {RefreshResponse} from "@/types/types";
+import {RefreshResponse} from "@/api/types";
 
 const rawBaseQuery = fetchBaseQuery({
     baseUrl:'http://localhost:8080/api',
