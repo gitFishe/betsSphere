@@ -5,7 +5,7 @@ import {authFailed, setCredentials} from "@/store/authSlice";
 import {RefreshResponse} from "@/api/types";
 
 const rawBaseQuery = fetchBaseQuery({
-    baseUrl:'http://localhost:8080/api',
+    baseUrl:process.env.NEXT_PUBLIC_API_URL,
     credentials:'include',
     prepareHeaders: (headers, {getState}) => {
         const token = (getState() as RootState).auth.accessToken

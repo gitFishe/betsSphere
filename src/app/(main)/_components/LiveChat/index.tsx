@@ -1,29 +1,27 @@
 'use client'
 
-import LiveChatMessage,{ChatMessage} from "@/app/(main)/_components/LiveChat/message";
-import {useState} from "react";
+import LiveChatMessage from "@/app/(main)/_components/LiveChat/message";
 import {useForm} from "react-hook-form";
+import useChatSocket from "@/hooks/useChatSocket";
 
 interface ChatForm {
-    message:string
+    msg:string
 }
 
-const TEST_ARRAY = ['first','second','third']
 
 export default function LiveChat() {
-    const [messages, setMessages] = useState<ChatMessage[]>([])
-
     const {
         register,
         handleSubmit,
         reset
     } = useForm<ChatForm>({
-        defaultValues:{message:''}
+        defaultValues:{msg:''}
     })
 
+    const {messages,sendMessage} = useChatSocket()
 
-    const onSubmit = ({message}:ChatForm) => {
-        setMessages((prev) => [...prev,{id:crypto.randomUUID(), author:'Ho Lee Sheet', text:message}])
+    const onSubmit = ({msg}:ChatForm) => {
+        sendMessage(msg)
         reset()
     }
 
@@ -34,13 +32,13 @@ export default function LiveChat() {
             </div>
             <div className='flex flex-col flex-1 min-h-0 overflow-y-auto no-scrollbar pt-3 px-4 gap-3'>
                 {messages.slice(0,20).map((item,i) => (
-                    <LiveChatMessage key={i} text={item.text} author={item.author}/>
+                    <LiveChatMessage key={i} body={item.body} author={item.author}/>
                 ))}
             </div>
             <div className='p-4 border-t border-border-default'>
                 <div className='rounded-full bg-element shadow-component'>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register('message', {required:true})} className='px-6 py-3 w-full text-xl' placeholder='Write a message...'/>
+                        <input {...register('msg', {required:true})} className='px-6 py-3 w-full text-xl' placeholder='Write a message...'/>
                     </form>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import {useGetMeQuery} from "@/api/usersApi";
 import BalanceComponent from "@/components/BalanceComponent";
 import ProfileInfoBlock from "@/components/ProfileInfoBlock";
 import {formatMonthYear} from "@/utils/date";
+import useChatSocket from "@/hooks/useChatSocket";
 
 const test = {
     "category": "string",
@@ -123,7 +124,6 @@ const columns:ColumnDef<TableProps>[] = [
 
 export default function List() {
     const {data:user,isLoading,error} = useGetMeQuery()
-
 
     const table = useReactTable({
         data,

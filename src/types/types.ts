@@ -6,4 +6,13 @@ export interface User {
     balance: number
     created_at:string
 }
-
+export interface ChatMessage {
+    id:string
+    author: {
+        id: string,
+        username: string,
+        avatar_url: string | null
+    }
+    body:string
+    created_at:string
+}
