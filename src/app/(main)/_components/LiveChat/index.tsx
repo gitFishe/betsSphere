@@ -3,6 +3,7 @@
 import LiveChatMessage from "@/app/(main)/_components/LiveChat/message";
 import {useForm} from "react-hook-form";
 import useChatSocket from "@/hooks/useChatSocket";
+import {useEffect, useRef} from "react";
 
 interface ChatForm {
     msg:string
@@ -20,6 +21,14 @@ export default function LiveChat() {
 
     const {messages,sendMessage} = useChatSocket()
 
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
     const onSubmit = ({msg}:ChatForm) => {
         sendMessage(msg)
         reset()
@@ -31,9 +40,10 @@ export default function LiveChat() {
                 <h3>Live Chat</h3>
             </div>
             <div className='flex flex-col flex-1 min-h-0 overflow-y-auto no-scrollbar pt-3 px-4 gap-3'>
-                {messages.slice(0,20).map((item,i) => (
+                {messages.map((item,i) => (
                     <LiveChatMessage key={i} body={item.body} author={item.author}/>
                 ))}
+                <div ref={messagesEndRef}/>
             </div>
             <div className='p-4 border-t border-border-default'>
                 <div className='rounded-full bg-element shadow-component'>

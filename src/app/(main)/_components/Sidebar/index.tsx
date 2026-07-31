@@ -5,6 +5,7 @@ const LINKS = [
     {title:'List',href:'/list'},
     {title:'History',href:'/history'},
     {title:'Settings',href:'/settings'},
+    {title:'Bet',href:'/bet'},
 ]
 
 export default function Sidebar() {
