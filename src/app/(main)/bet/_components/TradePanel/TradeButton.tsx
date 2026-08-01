@@ -1,8 +1,8 @@
 type TradeVariant = 'yes' | 'no' | 'neutral'
 
 const variants:Record<TradeVariant,string> = {
-    yes:'bg-green-500',
-    no:'bg-red-500',
+    yes:'bg-green-800',
+    no:'bg-red-800',
     neutral:'bg-gray-500'
 }
 

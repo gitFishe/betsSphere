@@ -16,11 +16,17 @@ const TRADE_INFO:TradeInfoTypes = {
 
 export default function TradePanel () {
     return (
-        <div className='border-3 border-border-default bg-component rounded-2xl p-5 w-75'>
+        <div className='border-3 shrink-0 h-max shadow-component sticky top-0 border-border-default bg-component rounded-2xl p-5 w-75'>
 
             <div className='flex gap-2'>
-                <TradeButton text='Buy'/>
-                <TradeButton text='Sell'/>
+               <div className='w-10 h-10 shrink-0 bg-white'></div>
+                <div className='font-bold'>
+                    <h3 className='text-text-dark'>Lorem ipsum</h3>
+                    <div className='flex gap-4 text-text'>
+                        <span>Lorem ipsum dolor.</span>
+                        <span>Yes</span>
+                    </div>
+                </div>
             </div>
 
             <div className='flex gap-2 mt-2'>
