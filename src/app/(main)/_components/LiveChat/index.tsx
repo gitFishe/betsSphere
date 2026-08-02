@@ -23,8 +23,9 @@ export default function LiveChat() {
 
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        messagesEndRef.current?.scrollIntoView({ behavior: 'instant' });
     };
+
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
@@ -40,7 +41,7 @@ export default function LiveChat() {
                 <h3>Live Chat</h3>
             </div>
             <div className='flex flex-col flex-1 min-h-0 overflow-y-auto no-scrollbar pt-3 px-4 gap-3'>
-                {messages.map((item,i) => (
+                {messages.slice(-30).map((item,i) => (
                     <LiveChatMessage key={i} body={item.body} author={item.author}/>
                 ))}
                 <div ref={messagesEndRef}/>

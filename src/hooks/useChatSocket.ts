@@ -26,8 +26,6 @@ export default function useChatSocket({marketId}:{marketId?:string} = {}) {
             if(msg.type === 'chat_message') setMessages((prev) => [...prev,msg.data])
             if (msg.type === 'error') console.error('[chat]', msg.message)
 
-            console.log('[ws] RAW:', e.data)
-            console.log('[ws] PARSED:', JSON.parse(e.data))
         }
 
 

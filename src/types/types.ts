@@ -16,3 +16,25 @@ export interface ChatMessage {
     body:string
     created_at:string
 }
+export interface MarketTypes {
+    "category": string,
+    "closes_at": string,
+    "created_at": string,
+    "description": string,
+    "id": string,
+    "outcomes": [
+        {
+            "id": string,
+            "label": string,
+            "price": number,
+            "thumbnail_url": string,
+            "volume": number,
+        }
+    ],
+    "participants_count": number,
+    "resolved_outcome_id": string,
+    "status": string,
+    "thumbnail_url": string,
+    "title": string,
+    "total_volume": number
+}
