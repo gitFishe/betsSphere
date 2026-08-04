@@ -41,7 +41,7 @@ export default function Bet() {
                 <Chart data={CHART_DATA}/>
                 <OutcomesList/>
                 <TabsComponent links={['Comments','Activity']}>
-                    <CommentsTab/>
+                    <CommentsTab data={[]}/>
                 </TabsComponent>
             </div>
 

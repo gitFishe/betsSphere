@@ -1,11 +1,12 @@
 import {MarketTypes} from "@/types/types";
 import BetsButton from "@/app/(main)/_components/BetsList/BetsButton";
 import {formatMonthYear} from "@/utils/date";
+import Link from "next/link";
 
 
-export default function BetsListItem({category,description,outcomes,total_volume,participants_count,closes_at}:MarketTypes) {
+export default function BetsListItem({category,description,outcomes,total_volume,participants_count,closes_at,id}:MarketTypes) {
     return (
-        <div className='bg-element rounded-[22px] border-3 border-border-default p-4 flex flex-col justify-between shadow-component w-full 2xl:w-[calc(50%-0.75rem)]'>
+        <Link href={`/market/${id}`} className='bg-element rounded-[22px] border-3 border-border-default p-4 flex flex-col justify-between shadow-component w-full 2xl:w-[calc(50%-0.75rem)]'>
 
             <div className='flex justify-between text-xs text-text-dark font-bold'>
                 <span>{category}</span>
@@ -22,6 +23,7 @@ export default function BetsListItem({category,description,outcomes,total_volume
                     <span className='text-xs text-text-dark'>Chance</span>
                 </div>
             </div>
+
             <div className='flex gap-3 pb-3 mb-2 border-b-3 border-border-default'>
                 <BetsButton text={`Yes ${Math.floor(outcomes[0].price * 100)}`} variant='yes'/>
                 <BetsButton text={`No ${100 - Math.floor(outcomes[0].price * 100)}`}  variant='no'/>
@@ -37,6 +39,6 @@ export default function BetsListItem({category,description,outcomes,total_volume
             {/*    <div className='w-full h-4 rounded-full bg-[#22262D]'/>*/}
             {/*</div>*/}
 
-        </div>
+        </Link>
     )
 }

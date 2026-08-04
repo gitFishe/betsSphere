@@ -1,4 +1,5 @@
 import Outcome, {OUTCOME_ROW} from "@/app/(main)/bet/_components/Outcome";
+import {MarketOutcome} from "@/types/types";
 
 const DATA = [
     {
@@ -28,7 +29,7 @@ const DATA = [
     }
 ]
 
-export default function OutcomesList() {
+export default function OutcomesList({data}:{data?:MarketOutcome[]}) {
     return (
         <div className='p-5 rounded-2xl border-3 border-border-default bg-component shadow-component'>
             <div className={`${OUTCOME_ROW} text-text-dark font-bold mb-3`}>
@@ -38,7 +39,7 @@ export default function OutcomesList() {
                 <span/>
             </div>
             <div>
-                {DATA.map((item,i) => (
+                {data?.map((item,i) => (
                     <Outcome key={i} {...item}/>
                 ))}
             </div>
