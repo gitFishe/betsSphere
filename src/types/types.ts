@@ -5,6 +5,13 @@ export interface User {
     avatar_url: string | null
     balance: number
     created_at:string
+    stats: {
+        losses:number,
+        total_bets:number,
+        total_volume:number,
+        win_rate:number,
+        wins:number,
+    }
 }
 
 export interface ChatMessage {

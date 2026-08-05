@@ -5,29 +5,7 @@ import {useGetMeQuery, useGetUserQuery} from "@/api/usersApi";
 import BalanceComponent from "@/components/BalanceComponent";
 import ProfileInfoBlock from "@/components/ProfileInfoBlock";
 import {formatMonthYear} from "@/utils/date";
-import useChatSocket from "@/hooks/useChatSocket";
-import {use} from "react";
-
-const test = {
-    "category": "string",
-    "closes_at": "2026-07-24T20:25:57.806Z",
-    "created_at": "2026-07-24T20:25:57.806Z",
-    "description": "string",
-    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "outcomes": [
-        {
-            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "label": "string",
-            "price": 0.1,
-            "volume": 9007199254740991
-        }
-    ],
-    "participants_count": 1073741824,
-    "resolved_outcome_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "status": "string",
-    "title": "string",
-    "total_volume": 9007199254740991
-}
+import {use, useState} from "react";
 
 declare module '@tanstack/react-table' {
     interface ColumnMeta<TData, TValue> {
@@ -123,13 +101,17 @@ const columns:ColumnDef<TableProps>[] = [
 ]
 
 
-export default function List({params}: {params: Promise<{id: string}>}) {
+export default function Profile({params}: {params: Promise<{id: string}>}) {
     const {id} = use(params)
 
     const {data:user,isLoading,error} = useGetMeQuery()
     const {data:userById} = useGetUserQuery(id)
 
+    console.log('user', user)
     console.log('userById', userById)
+
+    const isItMe = !!user?.id && user.id === userById?.id
+
 
 
     const table = useReactTable({
@@ -166,10 +148,9 @@ export default function List({params}: {params: Promise<{id: string}>}) {
                 <BalanceComponent balance={user?.balance}/>
             </div>
             <div className='flex gap-6 justify-center mt-6'>
-                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
-                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
-                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
-                <ProfileInfoBlock title='TOTAL BETS' number={200}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={userById?.stats.total_volume}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={userById?.stats.total_bets}/>
+                <ProfileInfoBlock title='TOTAL BETS' number={userById?.stats.win_rate}/>
             </div>
             <div className='h-full mt-7 rounded-4xl shadow-component bg-component border-2 border-border-default w-full overflow-y-auto flex flex-col'>
                 <div className='px-6 pt-4 pb-5 border-b-3 border-border-default flex items-center gap-9 text-2xl font-semibold text-text-dark shrink-0'>
