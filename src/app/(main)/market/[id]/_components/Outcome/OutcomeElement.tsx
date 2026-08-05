@@ -24,7 +24,7 @@ export default function OutcomeElement({label, volume, price, color}: OutcomeTyp
             </div>
             <span className='text-right font-bold tabular-nums'>{toPercent(price)}%</span>
             <div className='pl-5'>
-                <TradeButton text='Yes' variant='yes'/>
+                <TradeButton text='Buy'/>
             </div>
         </div>
     )

@@ -6,10 +6,11 @@ import CustomLink from "@/components/CustomLink";
 import {useSelector} from "react-redux";
 import {RootState} from "@/store/store";
 import NavProfileBlock from "@/components/NavProfileBlock";
+import {useGetMeQuery} from "@/api/usersApi";
 
 export default function MainLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
 
-    const auth = useSelector((state:RootState) => state.auth)
+    const {data:user,isLoading,error} = useGetMeQuery()
 
     return (
         <div className='h-screen bg-component-gradient py-6'>
@@ -21,10 +22,10 @@ export default function MainLayout({children,}: Readonly<{ children: React.React
                         <div className='flex justify-between pb-8'>
 
                             <div className='ml-auto'>
-                                {auth.status === 'loading'
+                                {isLoading
                                     ? <span className='h-12 block'>loading</span>
-                                    : auth.user
-                                        ? <NavProfileBlock/>
+                                    : user
+                                        ? <NavProfileBlock user={user}/>
                                         : <div className='flex items-center gap-3'>
                                             <CustomLink href='/login' text='Log in'/>
                                             <CustomLink purple={true} href='/register' text='Sign Up'/>

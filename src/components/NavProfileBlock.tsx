@@ -2,22 +2,20 @@ import Link from "next/link";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {authLogout} from "@/store/authSlice";
-import {useGetMeQuery} from "@/api/usersApi";
+import {User} from "@/types/types";
 
 
 
-export default function NavProfileBlock () {
+export default function NavProfileBlock ({user}:{user?:User}) {
 
     const dispatch = useDispatch()
     const [isOpen, setIsOpen] = useState(false)
 
-    const {data:user} = useGetMeQuery()
 
     const logout = () => {
         dispatch(authLogout())
     }
 
-    console.log(user)
 
     return (
         <div className='relative'>
