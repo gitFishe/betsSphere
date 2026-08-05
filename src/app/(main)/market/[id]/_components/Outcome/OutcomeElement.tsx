@@ -10,7 +10,7 @@ interface OutcomeTypes {
     color?: string,
 }
 
-export default function Outcome({label, volume, price, color}: OutcomeTypes) {
+export default function OutcomeElement({label, volume, price, color}: OutcomeTypes) {
     return (
         <div className={`${OUTCOME_ROW} py-3 border-t-2 border-element`}>
             <div className='w-10 h-10 rounded-lg bg-white'/>

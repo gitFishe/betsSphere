@@ -14,6 +14,10 @@ export const marketsApi = baseApi.injectEndpoints({
         getMarketPriceHistory:build.query<MarketPriceHistory[],string>({
             query:(id) => `/markets/${id}/price-history`,
             providesTags:(result,error,id) => [{type:'Bets',id}],
+        }),
+        getFeaturedMarket:build.query<MarketTypes,void>({
+            query:() => `/markets/featured`,
+            providesTags: ['Bets'],
         })
 
         // placeBet:build.mutation<PlaceBetResponse,PlaceBetRequest>({
@@ -28,4 +32,4 @@ export const marketsApi = baseApi.injectEndpoints({
 })
 
 
-export const { useGetMarketsQuery, useGetMarketQuery, useGetMarketPriceHistoryQuery} = marketsApi
+export const { useGetMarketsQuery, useGetMarketQuery, useGetMarketPriceHistoryQuery, useGetFeaturedMarketQuery} = marketsApi

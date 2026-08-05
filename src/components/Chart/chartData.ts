@@ -122,3 +122,26 @@ export function downsample(rows: ChartRow[], max = 180): ChartRow[] {
     const step = (rows.length - 1) / (max - 1)
     return Array.from({length: max}, (_, i) => rows[Math.round(i * step)])
 }
+
+/**
+ * Collapses rows into `count` equal time windows for a column chart.
+ * A price is a state, not a quantity - the bucket takes the last reading in its
+ * window, never a sum, so every column still adds up to 100%.
+ * Empty windows are dropped rather than drawn as gaps.
+ */
+export function bucketRows(rows: ChartRow[], count = 16): ChartRow[] {
+    if (rows.length <= count) return rows
+
+    const from = rows[0].t
+    const span = rows[rows.length - 1].t - from
+    if (span <= 0) return rows.slice(-1)
+
+    const last = new Map<number, ChartRow>()
+    for (const row of rows) {
+        // The final row would land in its own bucket past the end; clamp it into the last one.
+        const slot = Math.min(Math.floor(((row.t - from) / span) * count), count - 1)
+        last.set(slot, row)
+    }
+
+    return [...last.entries()].sort((a, b) => a[0] - b[0]).map(([, row]) => row)
+}

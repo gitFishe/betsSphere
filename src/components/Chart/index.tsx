@@ -1,6 +1,6 @@
 'use client'
 import {LineChart, Line, YAxis, XAxis, ReferenceLine, Tooltip, ResponsiveContainer, TooltipContentProps} from 'recharts'
-import {ChartRow, ChartSeries} from "@/app/(main)/market/[id]/_components/chartData";
+import {ChartRow, ChartSeries} from "@/components/Chart/chartData";
 
 const GRID = '#414149'
 const TICK = '#9898A0'
@@ -35,10 +35,21 @@ function ChartTooltip({active, payload, label}: TooltipContentProps) {
     )
 }
 
-export default function Chart({data, series}: {data: ChartRow[], series: ChartSeries[]}) {
+interface ChartProps {
+    data: ChartRow[]
+    series: ChartSeries[]
+    /** Preview inside a card: fills its parent, drops axes and chrome. */
+    compact?: boolean
+    /** Off for a strip inside a link, where a tooltip would fight the click target. */
+    interactive?: boolean
+}
+
+export default function Chart({data, series, compact = false, interactive = true}: ChartProps) {
     if (!data.length) {
         return (
-            <div className='h-[280px] flex items-center justify-center rounded-2xl border-3 border-border-default shadow-component text-text-dark text-sm'>
+            <div className={`flex items-center justify-center text-text-dark text-sm ${
+                compact ? 'h-full' : 'h-[280px] rounded-2xl border-3 border-border-default shadow-component'
+            }`}>
                 No price history yet
             </div>
         )
@@ -49,23 +60,25 @@ export default function Chart({data, series}: {data: ChartRow[], series: ChartSe
     const formatTick = spansDays ? dateLabel : timeLabel
 
     return (
-        <ResponsiveContainer width='100%' height={280}
-                             className='p-4 rounded-2xl border-3 border-border-default shadow-component'>
-            <LineChart data={data} margin={{top: 10, right: 8, bottom: 0, left: 0}}>
+        <ResponsiveContainer
+            width='100%' height={compact ? '100%' : 280}
+            className={compact ? '' : 'p-4 rounded-2xl border-3 border-border-default shadow-component'}
+        >
+            <LineChart data={data} margin={compact ? {top: 4, right: 4, bottom: 4, left: 4} : {top: 10, right: 8, bottom: 0, left: 0}}>
                 <YAxis
                     domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={40}
-                    tickLine={false} axisLine={false}
+                    tickLine={false} axisLine={false} hide={compact}
                     tick={{fill: TICK, fontSize: 12}} tickFormatter={v => `${v}%`}
                 />
                 {/* type='number' + scale='time': on the default category scale recharts would
                     space the points evenly and misstate how fast the price actually moved. */}
                 <XAxis
                     dataKey='t' type='number' scale='time' domain={['dataMin', 'dataMax']}
-                    tickLine={false} axisLine={false}
+                    tickLine={false} axisLine={false} hide={compact}
                     tick={{fill: TICK, fontSize: 12}} tickFormatter={formatTick}
                 />
 
-                {[25, 50, 75].map(y => (
+                {!compact && [25, 50, 75].map(y => (
                     <ReferenceLine key={y} y={y} stroke={GRID} strokeDasharray='3 3'/>
                 ))}
 
@@ -78,7 +91,7 @@ export default function Chart({data, series}: {data: ChartRow[], series: ChartSe
                     />
                 ))}
 
-                <Tooltip content={ChartTooltip} cursor={{stroke: GRID}}/>
+                {interactive && <Tooltip content={ChartTooltip} cursor={{stroke: GRID}}/>}
             </LineChart>
         </ResponsiveContainer>
     )

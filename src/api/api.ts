@@ -14,14 +14,22 @@ const rawBaseQuery = fetchBaseQuery({
     },
 })
 
+type RefreshResult = Awaited<ReturnType<typeof rawBaseQuery>>
+
+let refreshing: Promise<RefreshResult> | null = null
+
 const baseQueryWithReauth:BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> =
     async (args,api,extraOption) => {
         let result = await rawBaseQuery(args,api,extraOption)
 
         if(result.error?.status === 401) {
-            const refresh = await rawBaseQuery(
-                {url:'/auth/refresh',method:'POST'}, api,extraOption
-            )
+
+            const pending = refreshing ??= Promise.resolve(
+                rawBaseQuery({url:'/auth/refresh',method:'POST'},api,extraOption)
+            ).finally(()=> {refreshing = null})
+
+            const refresh = await pending
+
             if(refresh.data) {
                 const {user,access_token} = refresh.data as RefreshResponse
                 api.dispatch(setCredentials({user,accessToken:access_token}))

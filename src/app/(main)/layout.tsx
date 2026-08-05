@@ -20,19 +20,17 @@ export default function MainLayout({children,}: Readonly<{ children: React.React
 
                         <div className='flex justify-between pb-8'>
 
-
                             <div className='ml-auto'>
                                 {auth.status === 'loading'
                                     ? <span className='h-12 block'>loading</span>
                                     : auth.user
-                                        ? <NavProfileBlock username='username'/>
+                                        ? <NavProfileBlock/>
                                         : <div className='flex items-center gap-3'>
                                             <CustomLink href='/login' text='Log in'/>
                                             <CustomLink purple={true} href='/register' text='Sign Up'/>
                                         </div>
                                 }
                             </div>
-
                         </div>
 
                         <div className='w-full flex-1 min-h-0 '>{children}</div>

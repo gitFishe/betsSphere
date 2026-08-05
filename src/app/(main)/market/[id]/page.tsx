@@ -2,9 +2,9 @@
 
 import {use, useEffect, useMemo, useRef} from "react";
 import TradePanel from "@/app/(main)/market/[id]/_components/TradePanel";
-import OutcomesList from "@/app/(main)/market/[id]/_components/OutcomesList";
-import ChartPanel from "@/app/(main)/market/[id]/_components/ChartPanel";
-import {buildChartData} from "@/app/(main)/market/[id]/_components/chartData";
+import Index from "@/app/(main)/market/[id]/_components/Outcome";
+import ChartPanel from "@/app/(main)/market/[id]/_components/Chart/ChartPanel";
+import {buildChartData} from "@/components/Chart/chartData";
 import TabsComponent from "@/components/TabsComponent";
 import CommentsTab from "@/components/TabsComponent/CommentsTab";
 import {formatMonthYear} from "@/utils/date";
@@ -42,8 +42,8 @@ export default function MarketPage({params}: {params: Promise<{id: string}>}) {
     if (error || !market) return <StatusBox>Could not load this market.</StatusBox>
 
     return (
-        <div className='flex h-full gap-10 overflow-y-auto no-scrollbar'>
-            <div className='relative w-full flex flex-col gap-6'>
+        <div className='flex h-full gap-10'>
+            <div className='relative w-full h-full overflow-y-auto no-scrollbar flex flex-col gap-6 rounded-2xl'>
                 <div className='flex items-center gap-4 sticky top-0 left-0 bg-component z-100 p-3 rounded-2xl border-3 border-border-default shadow-component'>
                     <div className='w-15 h-15 bg-white rounded-2xl'></div>
                     <div>
@@ -63,7 +63,7 @@ export default function MarketPage({params}: {params: Promise<{id: string}>}) {
                     ? <StatusBox>Price history is unavailable right now.</StatusBox>
                     : <ChartPanel {...chart}/>}
 
-                <OutcomesList outcomes={market.outcomes} colors={chart.colors}/>
+                <Index outcomes={market.outcomes} colors={chart.colors}/>
                 <TabsComponent links={['Comments','Activity']}>
                     <CommentsTab data={messages} />
                 </TabsComponent>

@@ -1,7 +1,7 @@
 'use client'
 import {useMemo, useState} from "react";
-import Chart from "@/app/(main)/market/[id]/_components/Chart";
-import {ChartData, downsample, RANGES, RangeLabel, sliceRange} from "@/app/(main)/market/[id]/_components/chartData";
+import Chart from "@/components/Chart";
+import {ChartData, downsample, RANGES, RangeLabel, sliceRange} from "@/components/Chart/chartData";
 
 const MIN_POINTS = 2
 

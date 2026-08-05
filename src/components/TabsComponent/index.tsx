@@ -16,7 +16,7 @@ export default function TabsComponent({children,links}:{children:ReactNode,links
     }, [target, links])
 
     return (
-        <div className='h-full rounded-2xl shadow-component bg-component border-2 border-border-default w-full flex flex-col p-4'>
+        <div className='rounded-2xl shadow-component bg-component border-2 border-border-default w-full flex flex-col p-4'>
             <div className='relative border-b-3 border-border-default flex items-center text-xl font-semibold text-text-dark shrink-0'
                  >
                 {links.map((item,i) => (
@@ -37,7 +37,7 @@ export default function TabsComponent({children,links}:{children:ReactNode,links
                     style={{left:indicator.left, width:indicator.width}}
                 />
             </div>
-            <div>
+            <div className='flex-1 min-h-0 overflow-y-auto'>
                 {children}
             </div>
         </div>
